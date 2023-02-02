@@ -16,11 +16,6 @@ const pegaLocal = (callback, options) => {
   return { NE: pegaLocalNE, NW: pegaLocalNW, SE: pegaLocalSE, SW: pegaLocalSW };
 };
 
-// const residentEspecie = (especie) => {
-//   const pegaEspecie = data.species.find((e) => e.name === especie).residents;
-//   return { [especie]: pegaEspecie.map((e) => e.name) };
-// };
-
 const residentEspecieSexSort = (especie, options) => {
   const pegaEspecie = data.species.find((e) => e.name === especie).residents;
   if (options.sex && options.sorted) {
@@ -44,7 +39,7 @@ const getAnimalMap = (options) => {
   if (!includeNames) {
     return pegaLocal((e) => e); // teste 2 e 3
   }
-  return pegaLocal(residentEspecieSexSort, options); // teste 4
+  return pegaLocal(residentEspecieSexSort, options); // teste 4 ao 7
 };
 
 module.exports = getAnimalMap;
